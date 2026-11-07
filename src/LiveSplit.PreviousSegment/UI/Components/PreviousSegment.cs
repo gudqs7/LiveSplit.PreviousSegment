@@ -102,7 +102,7 @@ public class PreviousSegment : IComponent
     public string ComponentName
         => T("Previous Segment") + (Settings.Comparison == "Current Comparison"
             ? ""
-            : " (" + CompositeComparisons.GetShortComparisonName(Settings.Comparison) + ")");
+            : " (" + T(CompositeComparisons.GetShortComparisonName(Settings.Comparison)) + ")");
 
     public Control GetSettingsControl(LayoutMode mode)
     {
@@ -158,7 +158,7 @@ public class PreviousSegment : IComponent
             comparison = state.CurrentComparison;
         }
 
-        string comparisonName = CompositeComparisons.GetShortComparisonName(comparison);
+        string comparisonName = T(CompositeComparisons.GetShortComparisonName(comparison));
         string componentName = T("Previous Segment") + (Settings.Comparison == "Current Comparison" ? "" : " (" + comparisonName + ")");
 
         InternalComponent.LongestString = componentName;
